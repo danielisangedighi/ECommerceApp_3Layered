@@ -9,8 +9,9 @@ import javax.validation.constraints.Past;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+//This is the Shopping Kart Items List
 public class Item {
-
+    //Field Validation
     @NotBlank(message = "Please select a category")
     private String category;
     @NotBlank(message = "Name cannot be blank")
@@ -22,12 +23,18 @@ public class Item {
     @Past(message = "Date must be of the past")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
+
+    //This the the Unique ID for the Item being Constructed
+    //Unvalidated, since itis not revealed in the Views
     private String id;
 
+    //Publicizing of the Unique ID for the Item being Constructed
     public Item() {
+        //The Unique ID is randomized
         this.id = UUID.randomUUID().toString();
     }
 
+    //Getters, abd Setters methods...
     public String getId() {
         return this.id;
     }

@@ -12,7 +12,6 @@ public class StoreRepository {
     //Read in CRUD Operations
     public Item getItem(int index) {
         return items.get(index);
-
     }
 
     //Create in CRUD Operations
